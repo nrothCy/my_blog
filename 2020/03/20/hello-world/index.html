@@ -14,16 +14,16 @@
     <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hello World">
-<meta property="og:url" content="2020/03/20/hello-world/index.html">
+<meta property="og:url" content="https://nrothcy.github.io/my_blog/2020/03/20/hello-world/index.html">
 <meta property="og:site_name" content="JreCekie的破站">
 <meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="/images/og_image.png">
+<meta property="og:image" content="https://nrothcy.github.io/images/og_image.png">
 <meta property="article:published_time" content="2020-03-19T20:23:24.470Z">
 <meta property="article:modified_time" content="2020-03-19T20:23:24.470Z">
 <meta property="article:author" content="JreCekie">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="/images/og_image.png">
+<meta name="twitter:image" content="https://nrothcy.github.io/images/og_image.png">
 
 
 
@@ -57,7 +57,7 @@
     
     
     
-<link rel="stylesheet" href="css/back-to-top.css">
+<link rel="stylesheet" href="/css/back-to-top.css">
 
     
     
@@ -66,15 +66,19 @@
     
     
     
-    <link rel="stylesheet" href="css/progressbar.css">
+    <link rel="stylesheet" href="/css/progressbar.css">
 <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
     
-    
+    <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
 
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="/css/style.css">
 </head>
+
+<!--{% include '_third-party/comments/index.swig' %}-->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<script src="/live2d-widget/autoload.js"></script>
 
 <body class="is-2-column">
     <nav class="navbar navbar-main">
@@ -148,6 +152,11 @@
                 </span>
                 
                 
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
             </div>
         </div>
         
@@ -191,7 +200,7 @@
         <i class="fab fa-alipay"></i>
     </span>
     <span>支付宝</span>
-    <div class="qrcode"><img src="images/alipay.jpg" alt="支付宝"></div>
+    <div class="qrcode"><img src="/images/alipay.jpg" alt="支付宝"></div>
 </a>
 
                 
@@ -201,7 +210,7 @@
         <i class="fab fa-weixin"></i>
     </span>
     <span>微信</span>
-    <div class="qrcode"><img src="images/wechat.png" alt="微信"></div>
+    <div class="qrcode"><img src="/images/wechat.png" alt="微信"></div>
 </a>
 
                 
@@ -228,7 +237,7 @@
                 <div>
                     
                     <figure class="image is-128x128 has-mb-6">
-                        <img class="" src="images/avatar.png" alt="JreCekie">
+                        <img class="" src="/images/avatar.png" alt="JreCekie">
                     </figure>
                     
                     <p class="is-size-4 is-block">
@@ -237,7 +246,7 @@
                     
                     
                     <p class="is-size-6 is-block">
-                        因为想所以就做
+                        因为想所以做
                     </p>
                     
                     
@@ -385,16 +394,16 @@
         
         <article class="media">
             
-            <a href="2020/03/20/hello-world/" class="media-left">
+            <a href="/2020/03/20/hello-world/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="images/thumbnail.svg" alt="Hello World">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-19T20:23:24.470Z">2020-03-20</time></div>
-                    <a href="2020/03/20/hello-world/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hello World</a>
+                    <a href="/2020/03/20/hello-world/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hello World</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -414,7 +423,7 @@
         <ul class="menu-list">
         
         <li>
-            <a class="level is-marginless" href="archives/2020/03/">
+            <a class="level is-marginless" href="/archives/2020/03/">
                 <span class="level-start">
                     <span class="level-item">三月 2020</span>
                 </span>
@@ -458,47 +467,67 @@
         <div class="level">
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
-                
+                    
                     <img src="/images/logo.svg" alt="Hello World" height="28">
-                
+                    
                 </a>
                 <p class="is-size-7">
-                &copy; 2020 JreCekie&nbsp;
-                Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
+                    &copy; 2020 JreCekie&nbsp;
+                    Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
-                
+                    
+                    <br>
+                    <span id="busuanzi_container_site_uv">
+                        共<span id="busuanzi_value_site_uv">0</span>个访客
+                    </span>
+                    
                 </p>
             </div>
             <div class="level-end">
-            
+                
                 <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
-                
-                <p class="control">
-                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/">
-                        
-                        <i class="fab fa-creative-commons"></i>
-                        
-                    </a>
-                </p>
-                
-                <p class="control">
-                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
-                        
-                        <i class="fab fa-creative-commons-by"></i>
-                        
-                    </a>
-                </p>
-                
-                <p class="control">
-                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus">
-                        
-                        <i class="fab fa-github"></i>
-                        
-                    </a>
-                </p>
-                
+                    
+                    <p class="control">
+                        <a class="button is-white is-large" target="_blank"
+                            rel="noopener" title="Creative Commons"
+                            href="https://creativecommons.org/">
+                            
+                            <i class="fab fa-creative-commons"></i>
+                            
+                        </a>
+                    </p>
+                    
+                    <p class="control">
+                        <a class="button is-white is-large" target="_blank"
+                            rel="noopener" title="Attribution 4.0 International"
+                            href="https://creativecommons.org/licenses/by/4.0/">
+                            
+                            <i class="fab fa-creative-commons-by"></i>
+                            
+                        </a>
+                    </p>
+                    
+                    <p class="control">
+                        <a class="button is-white is-large" target="_blank"
+                            rel="noopener" title="Download on GitHub"
+                            href="https://github.com/ppoffice/hexo-theme-icarus">
+                            
+                            <i class="fab fa-github"></i>
+                            
+                        </a>
+                    </p>
+                    
+                    <span id="busuanzi_container_site_pv" class="theme-info">
+                        | 本站总访问量：<span id="busuanzi_value_site_pv"></span>次
+                    </span>
+                    <span id="busuanzi_container_site_uv" class="theme-info">
+                        | 本站访客数：<span id="busuanzi_value_site_uv"></span>人次
+                    </span>
+
+                    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
                 </div>
-            
+                
+
             </div>
         </div>
     </div>
@@ -511,7 +540,7 @@
 <script>
 var IcarusThemeSettings = {
     site: {
-        url: 'nrothcy.github.io/my_blog',
+        url: 'https://nrothcy.github.io/my_blog',
         external_link: {"enable":true,"exclude":[]}
     },
     article: {
@@ -530,13 +559,13 @@ var IcarusThemeSettings = {
 
 
 
-<script src="js/animation.js"></script>
+<script src="/js/animation.js"></script>
 
 
 
 <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
-<script src="js/gallery.js" defer></script>
+<script src="/js/gallery.js" defer></script>
 
 
 
@@ -585,7 +614,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <a id="back-to-top" title="回到顶端" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
-<script src="js/back-to-top.js" defer></script>
+<script src="/js/back-to-top.js" defer></script>
 
 
 
@@ -600,7 +629,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<script src="js/main.js" defer></script>
+<script src="/js/main.js" defer></script>
     、
     
     <div class="searchbox ins-search">
@@ -629,13 +658,11 @@ document.addEventListener('DOMContentLoaded', function () {
         window.INSIGHT_CONFIG = INSIGHT_CONFIG;
     })(window);
 </script>
-<script src="js/insight.js" defer></script>
-<link rel="stylesheet" href="css/search.css">
-<link rel="stylesheet" href="css/insight.css">
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
     
-    {% include '_third-party/comments/index.swig' %}
-    <script type="text/javascript" src="/js/src/clicklove.js"></script>
-    <script src="/live2d-widget/autoload.js"></script>
+
 </body>
 
 </html>
