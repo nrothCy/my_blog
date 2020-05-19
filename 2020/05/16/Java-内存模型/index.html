@@ -8,18 +8,21 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>JreCekie</title>
+<title>Java 内存模型概述 - JreCekie</title>
 
 
-    <meta name="description" content="计算机技术爱好者">
-<meta property="og:type" content="website">
-<meta property="og:title" content="JreCekie">
-<meta property="og:url" content="https://nrothcy.github.io/index.html">
+    <meta name="description" content="​    Java程序在执行前首先会被编译成字节码文件，然后再由Java虚拟机执行这些字节码文件从而使得Java程序得以执行。事实上，在程序执行过程中，内存的使用和管理一直是值得关注的问题。Java虚拟机在执行Java程序的过程中会把它所管理的内存划分为若干个不同的数据区域，这些数据区域都有各自的用途，以及创建和销毁的时间，并且它们可以分为两种类型：线程共享的方法区和堆，线程私有的虚拟机栈、本地方">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java 内存模型概述">
+<meta property="og:url" content="https://nrothcy.github.io/2020/05/16/Java-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/index.html">
 <meta property="og:site_name" content="JreCekie">
-<meta property="og:description" content="计算机技术爱好者">
+<meta property="og:description" content="​    Java程序在执行前首先会被编译成字节码文件，然后再由Java虚拟机执行这些字节码文件从而使得Java程序得以执行。事实上，在程序执行过程中，内存的使用和管理一直是值得关注的问题。Java虚拟机在执行Java程序的过程中会把它所管理的内存划分为若干个不同的数据区域，这些数据区域都有各自的用途，以及创建和销毁的时间，并且它们可以分为两种类型：线程共享的方法区和堆，线程私有的虚拟机栈、本地方">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://nrothcy.github.io/images/og_image.png">
+<meta property="article:published_time" content="2020-05-16T03:29:48.000Z">
+<meta property="article:modified_time" content="2020-05-18T16:26:51.441Z">
 <meta property="article:author" content="JreCekie">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://nrothcy.github.io/images/og_image.png">
 
@@ -86,7 +89,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="JreCekie" height="28">
+                <img src="/images/logo.svg" alt="Java 内存模型概述" height="28">
             
             </a>
         </div>
@@ -94,7 +97,7 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item is-active"
+                <a class="navbar-item"
                 href="/">主页</a>
                 
                 <a class="navbar-item"
@@ -139,7 +142,6 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-9-desktop is-9-widescreen has-order-2 column-main">
-    
 <div class="card">
     
     <div class="card-content article ">
@@ -160,12 +162,17 @@
                 </span>
                 
                 
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
             </div>
         </div>
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2020/05/16/Java-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/">Java 内存模型概述</a>
+                Java 内存模型概述
             
         </h1>
         <div class="content">
@@ -260,185 +267,103 @@
 
         </div>
         
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/04/26/%E5%85%B3%E4%BA%8ENginx/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/01/images01.jpg" alt="关于Nginx">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-04-26T04:52:11.000Z">2020-04-26</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    21 分钟 读完 (大约 3171 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/04/26/%E5%85%B3%E4%BA%8ENginx/">关于Nginx</a>
-            
-        </h1>
-        <div class="content">
-            <p>我们要知道 Nginx 是异步框架的网页服务器，是一个<strong>使用c语言开发的高性能的http服务器及反向代理服务器，</strong> 也可以用作反向代理、负载平衡器和 HTTP 缓存。 Nginx 是免费的开源软件，根据类 BSD 许可证的条款发布。 </p>
-<h4 id="Nginx的产生"><a href="#Nginx的产生" class="headerlink" title="Nginx的产生"></a><strong>Nginx的产生</strong></h4><p>Nginx 同 Apache 一样都是一种 Web 服务器。基于 REST 架构风格，以统一资源描述符（Uniform Resources Identifier）URI 或者统一资源定位符（Uniform Resources Locator）URL 作为沟通依据，通过 HTTP 协议提供各种网络服务。 </p>
-<p>然而，这些服务器在设计之初受到当时环境的局限，例如当时的用户规模，网络带宽，产品特点等局限并且各自的定位和发展都不尽相同。这也使得各个 Web 服务器有着各自鲜明的特点。 </p>
-<p>Apache 的发展时期很长，而且是毫无争议的
-        </div>
-        
-        
-        <div class="level is-mobile">
+        <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/04/26/%E5%85%B3%E4%BA%8ENginx/#more">阅读更多</a>
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Java/" rel="tag">Java</a>
                 </div>
             </div>
         </div>
         
         
+        
+        <!-- AddToAny BEGIN -->
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+<a class="a2a_button_facebook"></a>
+<a class="a2a_button_twitter"></a>
+<a class="a2a_button_telegram"></a>
+<a class="a2a_button_whatsapp"></a>
+<a class="a2a_button_reddit"></a>
+</div>
+<script async src="https://static.addtoany.com/menu/page.js"></script>
+<!-- AddToAny END -->
+
+        
     </div>
 </div>
 
 
 
-
-
-
-
-
-    
 <div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/03/24/%E6%B5%8B%E8%AF%95/" class="image is-7by1">
-            <img class="thumbnail" src="http://api.mtyqx.cn/api/random.php" alt="测试">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-03-23T20:15:35.000Z">2020-03-24</time>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    几秒 读完 (大约 36 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
             
-                <a class="has-link-black-ter" href="/2020/03/24/%E6%B5%8B%E8%AF%95/">测试</a>
-            
-        </h1>
-        <div class="content">
-            <p>评论系统邮箱使用QQ邮箱格式为“QQ号@qq.com”，否则头像将为空白</p>
-<p>文章图片为随机</p>
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="/images/alipay.jpg" alt="支付宝"></div>
+</a>
 
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="/images/wechat.png" alt="微信"></div>
+</a>
+
+                
         </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
         
         
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/04/26/%E5%85%B3%E4%BA%8ENginx/">
+                <span class="level-item">关于Nginx</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
         
     </div>
 </div>
 
 
 
-
-
-
-
-
-    
 <div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/03/20/hello-world/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/01/images02.jpg" alt="Hello World">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
         
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-03-19T20:23:24.470Z">2020-03-20</time>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    1 分钟 读完 (大约 124 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/03/20/hello-world/">Hello World</a>
-            
-        </h1>
-        <div class="content">
-            <p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/03/20/hello-world/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/js/Valine.min.js"></script>
+<!--%- _js(cdn('valine', '1.3.10', 'dist/Valine.min.js')) %-->
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: false,
+        verify: false,
+        app_id: 'fM0oMmmlQlxR55om0onEUxX4-gzGzoHsz',
+        app_key: 'Lrmumib1ti5kIioHC1a2nkm1',
+        placeholder: ''
+    });
+</script>
+
     </div>
 </div>
-
-
-
-
-
-
-
-
 </div>
                 
 
@@ -772,7 +697,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                     
-                    <img src="/images/logo.svg" alt="JreCekie" height="28">
+                    <img src="/images/logo.svg" alt="Java 内存模型概述" height="28">
                     
                 </a>
                 <p class="is-size-7">
